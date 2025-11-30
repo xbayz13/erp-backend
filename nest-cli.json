@@ -1,0 +1,17 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "entryFile": "main",
+  "compilerOptions": {
+    "builder": "swc",
+    "assets": [
+      {
+        "include": "**/*.hbs",
+        "outDir": "dist",
+        "watchAssets": true
+      }
+    ]
+  }
+}
+
+
