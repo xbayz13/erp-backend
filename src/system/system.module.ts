@@ -33,6 +33,14 @@ import { I18nService } from './services/i18n.service';
 import { IntegrationHubService } from './services/integration-hub.service';
 import { SystemController } from './controllers/system.controller';
 import { AuditLog } from '../audit/entities/audit-log.entity';
+// Import entities needed by System services
+import { Item } from '../inventory/entities/item.entity';
+import { Customer } from '../sales/entities/customer.entity';
+import { Supplier } from '../purchasing/entities/supplier.entity';
+import { SalesOrder } from '../sales/entities/sales-order.entity';
+import { PurchaseOrder } from '../purchasing/entities/purchase-order.entity';
+import { FinancialTransaction } from '../finance/entities/financial-transaction.entity';
+import { ProductionOrder } from '../production/entities/production-order.entity';
 
 @Module({
   imports: [
@@ -54,6 +62,15 @@ import { AuditLog } from '../audit/entities/audit-log.entity';
       Integration,
       Webhook,
       AuditLog,
+      // Entities needed by DataImportExportService
+      Item,
+      Customer,
+      Supplier,
+      // Entities needed by AnalyticsService
+      SalesOrder,
+      PurchaseOrder,
+      FinancialTransaction,
+      ProductionOrder,
     ]),
   ],
   controllers: [SystemController],
